@@ -1,0 +1,53 @@
+// How much hours do you sleep on each day
+const getSleepHours = day => {
+  if( day === 'monday') {
+    return 8;
+  }
+  else if(day === 'tuesday'){
+    return 8;
+  }
+  else if(day === 'wednesday'){
+    return 8;
+  }
+  else if(day === 'thursday'){
+    return 8;
+  }
+  else if(day === 'friday'){
+    return 8;
+  }
+  else if(day === 'saturday'){
+    return 8;
+  }
+  else if(day === 'sunday'){
+    return 8;
+  }
+};
+// Total hours per week
+const getActualSleepHours = () => 
+getSleepHours('monday') + 
+getSleepHours('tuesday') + 
+getSleepHours('wednesday') + 
+getSleepHours('thursday') + 
+getSleepHours('friday') + 
+getSleepHours('saturday') + 
+getSleepHours('sunday');
+// Ideal sleep hours that you prefer per week
+const getIdealSleepHours= () =>{
+  const idealHours = 8;
+  return idealHours *7;
+}
+
+const calculateSleepDebt = () => {
+    const actualSleepHours = getActualSleepHours();
+    const idealSleepHours = getIdealSleepHours();
+    if(actualSleepHours > idealSleepHours){
+      console.log('You got ' + (actualSleepHours - idealSleepHours) + ' hour(s) more sleep than you needed this week. Dont sleep so long!')
+    }
+    else if(actualSleepHours < idealSleepHours){
+      console.log('You got ' + (idealSleepHours - actualSleepHours) + ' hour(s) less sleep than you needed this week. Get some rest.');
+    }
+    else{
+      console.log('You get the perfect amount of sleep!')
+  }
+}
+calculateSleepDebt();
